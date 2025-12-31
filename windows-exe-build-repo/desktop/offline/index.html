@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>United Field Staff — Admin (Offline)</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:0;background:#f6f7fb;}
+  header{background:#0b1220;color:#fff;padding:16px 20px;}
+  .wrap{max-width:1100px;margin:22px auto;padding:0 16px;}
+  .card{background:#fff;border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);margin-bottom:14px}
+  h1{margin:0;font-size:18px}
+  .small{font-size:12px;color:#cbd5e1;margin-top:6px}
+  .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef2ff;color:#1e2a78;font-weight:700;font-size:12px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:10px;border-bottom:1px solid #eee;text-align:left}
+  button{border:0;border-radius:12px;padding:10px 12px;font-weight:800;cursor:pointer}
+  .primary{background:#14b86a;color:#fff}
+  .danger{background:#ef4444;color:#fff}
+  .muted{color:#555}
+</style>
+</head>
+<body>
+<header>
+  <h1>United Field Staff — Admin Desktop (Offline Demo)</h1>
+  <div class="small">Your EXE opens every time. To enable real login + live data, set ADMIN_URL to your hosted Admin Portal.</div>
+</header>
+<div class="wrap">
+  <div class="card">
+    <h2 style="margin:0 0 8px 0">Open / Pending Shifts</h2>
+    <div class="pill">OPEN</div> <div class="pill">OFFERED</div> <div class="pill">PENDING_FACILITY</div>
+    <table>
+      <thead><tr><th>ID</th><th>Facility</th><th>Role</th><th>Time</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>#4831</td><td>Triboro Center</td><td>RN</td><td>Jan 2, 7a–3p</td><td>OPEN</td></tr>
+        <tr><td>#4832</td><td>Kings Harbor</td><td>LPN</td><td>Jan 2, 3p–11p</td><td>OFFERED</td></tr>
+        <tr><td>#4833</td><td>Bainbridge</td><td>CNA</td><td>Jan 2, 11p–7a</td><td>PENDING_FACILITY</td></tr>
+      </tbody>
+    </table>
+    <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+      <button class="primary" onclick="alert('Demo only: real app dispatches Push/SMS tiered, then facility approves via SMS link.')">Dispatch Selected</button>
+      <button onclick="alert('Demo only: shift creation form in real portal.')">New Shift</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin:0 0 8px 0">Facility Approval Link UI</h2>
+    <div class="pill">Compliance: Verified ✅</div>
+    <p class="muted"><b>Clinician:</b> Sarah A. (RN)<br/><b>Shift:</b> #4831 • Jan 2 • 7a–3p • Triboro Center</p>
+    <div class="card" style="background:#f8fafc;border:1px solid #e5e7eb;box-shadow:none">
+      <b>Credential Packet (optional)</b>
+      <div class="muted" style="margin-top:6px;font-size:13px">Shown only if facility setting is ON (persistent).</div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+      <button class="primary" onclick="alert('Approved ✅ (demo)')">Approve</button>
+      <button class="danger" onclick="alert('Declined ❌ (demo)')">Decline</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin:0 0 8px 0">What you get when ADMIN_URL is set</h2>
+    <ul class="muted">
+      <li>Secure login portal (admin role)</li>
+      <li>Full nurse roster + credentials + expirations</li>
+      <li>Calendar scheduling + dispatch (push first, SMS fallback)</li>
+      <li>Facility approvals + timesheet approvals via secure SMS links</li>
+      <li>Audit logs + exports</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
